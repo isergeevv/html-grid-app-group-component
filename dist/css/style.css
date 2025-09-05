@@ -1,0 +1,7 @@
+.app-element[data-type=component][data-label=group] {
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,29 @@
+name: Node.js Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release-publish:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish Package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

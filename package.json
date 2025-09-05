@@ -1,0 +1,40 @@
+{
+  "name": "@isergeevv/html-grid-app-group-component",
+  "version": "0.0.0",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/esm/index.js"
+  },
+  "scripts": {
+    "build": "rollup -c && sass style/index.scss dist/css/style.css",
+    "build:js": "rollup -c",
+    "build:css": "sass style/index.scss dist/css/style.css",
+    "build:watch": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isergeevv/html-grid-app-group-component.git"
+  },
+  "publishConfig": {
+    "@isergeevv:registry": "https://npm.pkg.github.com"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "devDependencies": {
+    "@isergeevv/html-grid-app-base": "^0.0.6",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@types/node": "^24.0.15",
+    "rollup": "^4.45.1",
+    "rollup-plugin-dts": "^6.2.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "sass": "^1.89.2",
+    "typescript": "^5.8.3"
+  }
+}
